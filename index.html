@@ -7,90 +7,56 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      color: white;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      color: #FFD700;
       background: url('ONN.JPG') no-repeat center center fixed;
       background-size: cover;
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      height: 100vh;
+      justify-content: center;
+      min-height: 100vh;
       overflow-y: auto;
-      position: relative;
     }
     h1 {
-      font-size: 4rem;
-      margin-top: 2rem;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
     }
-    p {
-      font-size: 1.5rem;
-      text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
     }
-    .contact-popup {
-      display: none;
-      position: fixed;
-      top: 20%;
-      left: 50%;
-      transform: translate(-50%, -20%);
-      background: rgba(0, 0, 0, 0.85);
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+    .footer {
+      margin-top: 3rem;
     }
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
-      border-radius: 6px;
-      border: none;
+    .footer img {
+      width: 80px;
+      opacity: 0.75;
+      filter: drop-shadow(0 0 6px #FFD700);
     }
-    button {
-      padding: 10px 20px;
-      font-weight: bold;
-      border-radius: 6px;
-      border: none;
-      cursor: pointer;
-      background-color: #FFD700;
-      color: black;
-      transition: 0.3s;
-    }
-    button:hover {
-      background-color: #FFA500;
-    }
-    .footer a {
+    a {
       color: #FFD700;
+      font-size: 1.2rem;
       text-decoration: none;
-      font-weight: bold;
-    }
-    .footer a:hover {
-      color: #FFA500;
     }
   </style>
-  <script>
-    function toggleContact() {
-      const popup = document.getElementById('contact-popup');
-      popup.style.display = popup.style.display === 'none' ? 'block' : 'none';
-    }
-  </script>
 </head>
 <body>
   <h1>Coming Soon</h1>
-  <p>Stay connected. Omniversal News Network will be launching soon.</p>
+  <h2>Stay connected. Omniversal News Network will be launching soon.</h2>
 
-  <div id="contact-popup" class="contact-popup">
-    <p style="font-size: 1.2rem;">Please include your return address:</p>
-    <input type="email" placeholder="Your Email" required>
-    <textarea placeholder="Your Message" rows="4"></textarea>
-    <button onclick="toggleContact()">Send</button>
-    <p style="margin-top: 10px;"><a href="#" onclick="toggleContact()">[X] Close</a></p>
-  </div>
+  <footer class="footer">
+    <a href="https://omniversalmedia.net">
+      <img src="omniversal_symbol.jpeg" alt="Omniversal Symbol">
+    </a>
+    <p><a href="#" onclick="toggleContactForm()">Contact Us</a></p>
+  </footer>
 
-  <div class="footer">
-    <a href="https://omniversalmedia.net"><img src="omniversal_symbol.jpeg" alt="Omniversal Symbol" width="80"></a>
-    <p><a href="#" onclick="toggleContact()">Contact Us</a></p>
-  </div>
+  <script>
+    function toggleContactForm() {
+      alert('Contact form coming soon!');
+    }
+  </script>
 </body>
 </html>
