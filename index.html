@@ -1,52 +1,49 @@
-<!-- Omniversal News Network Updated HTML -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Omniversal News Network - Coming Soon</title>
+  <meta name="description" content="Omniversal News Network - Coming Soon">
+  <title>Omniversal News Network</title>
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: url('ONN.JPG') no-repeat center center;
+      font-family: 'Arial', sans-serif;
+      background: url('ONN.JPG') no-repeat center center fixed;
       background-size: cover;
-      height: 100vh;
+      text-align: center;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-    @media (max-width: 768px) {
-      body {
-        background-size: contain;
-      }
-    }
-    h1, h2 {
-      color: yellow;
-      margin: 0;
-    }
-    .sub-header {
-      font-size: 1.2rem;
-      margin-bottom: 1.5rem;
+      justify-content: flex-end;
+      height: 100vh;
     }
     .footer {
-      margin-top: 2rem;
-      text-align: center;
+      margin-bottom: 30px;
     }
-    .footer a {
-      text-decoration: none;
+    .footer img {
+      width: 70px;
+      opacity: 0.8;
+    }
+    .contact-link {
+      font-size: 1rem;
+      font-weight: bold;
       color: yellow;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <h1>Coming Soon</h1>
-  <h2 class="sub-header">Stay connected. Omniversal News Network will be launching soon.</h2>
-  <div class="footer">
-    <a href="#contactForm">Contact Us</a>
-    <br/>
-    <img src="omniversal_symbol.jpeg" alt="Omniversal Symbol" width="60">
-  </div>
+  <footer class="footer">
+    <a href="javascript:void(0)" onclick="openContactPopup()" class="contact-link">Contact Us</a>
+    <br>
+    <a href="https://omniversalmedia.net">
+      <img src="omniversal_symbol.jpeg" alt="Omniversal Symbol">
+    </a>
+  </footer>
+  <script>
+    function openContactPopup() {
+      alert('Please include your return email address. You can reach us at legal@omniversalmedia.cc');
+    }
+  </script>
 </body>
 </html>
