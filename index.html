@@ -7,87 +7,90 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Arial', sans-serif;
-      color: #FFFFFF;
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+      font-family: Arial, sans-serif;
+      color: white;
       background: url('ONN.JPG') no-repeat center center fixed;
       background-size: cover;
-      height: 100vh;
+      text-align: center;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      text-align: center;
-      overflow: hidden;
+      justify-content: space-between;
+      height: 100vh;
+      overflow-y: auto;
+      position: relative;
     }
-    .content h1 {
+    h1 {
       font-size: 4rem;
-      margin-bottom: 1rem;
-    }
-    .content p {
-      font-size: 1.5rem;
-    }
-    .footer {
       margin-top: 2rem;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
     }
-    .footer img {
-      width: 80px;
-      opacity: 0.8;
+    p {
+      font-size: 1.5rem;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
     }
     .contact-popup {
       display: none;
       position: fixed;
-      top: 50%;
+      top: 20%;
       left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: rgba(0, 0, 0, 0.85);
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+      transform: translate(-50%, -20%);
+      background: rgba(0, 0, 0, 0.85);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
     }
-    .close-btn {
-      cursor: pointer;
-      color: #FFD700;
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      border: none;
+    }
+    button {
+      padding: 10px 20px;
       font-weight: bold;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      background-color: #FFD700;
+      color: black;
+      transition: 0.3s;
     }
-    a {
+    button:hover {
+      background-color: #FFA500;
+    }
+    .footer a {
       color: #FFD700;
       text-decoration: none;
+      font-weight: bold;
     }
-    a:hover {
-      text-decoration: underline;
+    .footer a:hover {
+      color: #FFA500;
     }
   </style>
+  <script>
+    function toggleContact() {
+      const popup = document.getElementById('contact-popup');
+      popup.style.display = popup.style.display === 'none' ? 'block' : 'none';
+    }
+  </script>
 </head>
 <body>
-  <div class="content">
-    <h1>Coming Soon</h1>
-    <p>Stay connected. Omniversal News Network will be launching soon.</p>
+  <h1>Coming Soon</h1>
+  <p>Stay connected. Omniversal News Network will be launching soon.</p>
+
+  <div id="contact-popup" class="contact-popup">
+    <p style="font-size: 1.2rem;">Please include your return address:</p>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Your Message" rows="4"></textarea>
+    <button onclick="toggleContact()">Send</button>
+    <p style="margin-top: 10px;"><a href="#" onclick="toggleContact()">[X] Close</a></p>
   </div>
 
   <div class="footer">
-    <a href="https://omniversalmedia.net">
-      <img src="omniversal_symbol.jpeg" alt="Omniversal Symbol">
-    </a>
-    <br>
-    <a href="#" onclick="toggleContact()">Contact Us</a>
+    <a href="https://omniversalmedia.net"><img src="omniversal_symbol.jpeg" alt="Omniversal Symbol" width="80"></a>
+    <p><a href="#" onclick="toggleContact()">Contact Us</a></p>
   </div>
-
-  <div class="contact-popup" id="contactPopup">
-    <span class="close-btn" onclick="toggleContact()">[X] Close</span>
-    <h3>Contact Omniversal News Network</h3>
-    <form action="mailto:legal@omniversalmedia.cc" method="POST" enctype="text/plain">
-      <input type="email" name="email" placeholder="Your email" required>
-      <textarea name="message" placeholder="Your message" required></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </div>
-
-  <script>
-    function toggleContact() {
-      const popup = document.getElementById('contactPopup');
-      popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
-    }
-  </script>
 </body>
 </html>
