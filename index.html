@@ -1,85 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Omniversal News Network</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            color: #FFFFFF;
-            text-align: center;
-            background: url('ONN.JPG') no-repeat center center fixed;
-            background-size: cover;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            z-index: 1;
-        }
-        .content {
-            position: relative;
-            z-index: 2;
-            padding: 1rem;
-        }
-        h1 {
-            font-size: 3rem;
-            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
-        }
-        .email-form {
-            margin-top: 20px;
-        }
-        input[type="email"] {
-            padding: 10px;
-            font-size: 1rem;
-            border: none;
-            border-radius: 5px;
-        }
-        button {
-            padding: 10px 15px;
-            font-size: 1rem;
-            background-color: #FFD700;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        button:hover {
-            background-color: #FFA500;
-        }
-        .footer {
-            margin-top: 30px;
-        }
-        .footer img {
-            width: 60px;
-            opacity: 0.8;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Omniversal News Network - Coming Soon</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      color: #FFFFFF;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+      background: url('ONN.JPG') no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
+    .content h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+    .content p {
+      font-size: 1.5rem;
+    }
+    .footer {
+      margin-top: 2rem;
+    }
+    .footer img {
+      width: 80px;
+      opacity: 0.8;
+    }
+    .contact-popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.85);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+    }
+    .close-btn {
+      cursor: pointer;
+      color: #FFD700;
+      font-weight: bold;
+    }
+    a {
+      color: #FFD700;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-    <div class="overlay"></div>
-    <div class="content">
-        <h1>Coming Soon</h1>
-        <p>Stay connected. Omniversal News Network will be launching soon.</p>
-        <form class="email-form" action="mailto:legal@omniversalmedia.cc" method="post" enctype="text/plain">
-            <input type="email" name="email" placeholder="Enter your email" required>
-            <button type="submit">Notify Me</button>
-        </form>
-    </div>
-    <footer class="footer">
-        <a href="https://omniversalmedia.net">
-            <img src="omniversal_symbol.jpeg" alt="Omniversal Symbol">
-        </a>
-    </footer>
+  <div class="content">
+    <h1>Coming Soon</h1>
+    <p>Stay connected. Omniversal News Network will be launching soon.</p>
+  </div>
+
+  <div class="footer">
+    <a href="https://omniversalmedia.net">
+      <img src="omniversal_symbol.jpeg" alt="Omniversal Symbol">
+    </a>
+    <br>
+    <a href="#" onclick="toggleContact()">Contact Us</a>
+  </div>
+
+  <div class="contact-popup" id="contactPopup">
+    <span class="close-btn" onclick="toggleContact()">[X] Close</span>
+    <h3>Contact Omniversal News Network</h3>
+    <form action="mailto:legal@omniversalmedia.cc" method="POST" enctype="text/plain">
+      <input type="email" name="email" placeholder="Your email" required>
+      <textarea name="message" placeholder="Your message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <script>
+    function toggleContact() {
+      const popup = document.getElementById('contactPopup');
+      popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
 </body>
 </html>
